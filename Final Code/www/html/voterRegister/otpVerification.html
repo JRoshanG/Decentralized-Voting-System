@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/voterRegister/voterRegistration.css">
+    <title>Application Form</title>
+</head>
+
+<body>
+    <!-- This is a form to verify an OTP (One Time Password) for a decentralized voting system. 
+        The form contains one input field for the OTP number and a submit button. 
+        When the user clicks on the submit button, the form will be submitted to the otpVerification.php file in the voterRegister directory. -->
+
+    <h1 class="title">Decentralized Voting System OTP Verification</h1>
+    <div class="container">
+        <form action="../../php/voterRegister/otpVerification.php" method="post">
+            <div class="row">
+                <div class="col-25">
+                    <label for="otpNumber">Received OTP Number</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="otpNumber" id="otpNumber" placeholder="Your Received OTP Number" required>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

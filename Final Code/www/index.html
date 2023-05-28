@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body,html{
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+      }
+
+      .btn-group {
+        display: flex;
+      }
+
+      .btn {
+        padding: 20px 40px;
+        margin: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Nepal Online DApp Voting System</h1>
+    <div class="container">
+      <div class="btn-group">
+        <button class="btn" onclick="window.location.href='html/admin/adminLogin.html'">Admin Login</button>
+        <button class="btn" onclick="window.location.href='html/voterVote/votingPanel.php'">Voter Login</button>
+      </div>
+      <button class="btn" onclick="window.location.href='html/voterRegister/voterRegistration.php'">Voting System Registration</button>
+    </div>
+  </body>
+</html>

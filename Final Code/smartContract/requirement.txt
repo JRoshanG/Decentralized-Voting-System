@@ -1,0 +1,9 @@
+npm install 
+npm init --yes
+npm install --save-dev hardhat
+npx hardhat
+npm install dotenv --save
+npm install --save-dev @nomiclabs/hardhat-ethers "ethers@^5.0.0"
+Replace the hardhat.config.js with config.txt file
+npx hardhat compile
+npx hardhat run scripts/deploy.js

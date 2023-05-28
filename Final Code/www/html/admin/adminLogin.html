@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <!-- The code checks if the user's browser has injected the Ethereum Web3 object or not. 
+    If the browser has injected the Web3 object, then the code uses that object to create a new Web3 instance. Otherwise, 
+    it checks if the browser has a legacy version of the Web3 object or not. If it has, then the code uses that object. 
+    Finally, if neither condition is met, the code displays an alert message and redirects the user to the homepage. -->
+  <head>
+    <!-- Script to Import Web3 Module from Web  -->
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+    <script>
+      window.addEventListener('load', async () => {
+        // The code requests account access from the user using the ethereum.enable() function, which is asynchronous. 
+        // If the user denies account access, an error is thrown, and the code does not proceed.
+        if (window.ethereum) {
+          window.web3 = new Web3(ethereum);
+          try {
+            // Request account access if needed
+            await ethereum.enable();
+          } catch (error) {
+            // User denied account access...
+          }
+        }
+        // Legacy dapp browsers...
+        else if (window.web3) {
+            window.web3 = new Web3(web3.currentProvider);
+        }
+        // Non-dapp browsers...
+        else {
+          alert('Non-Ethereum browser detected. You should consider trying MetaMask!');
+          window.location.href = '../../index.html'
+        }
+
+        // The code then checks if the user's wallet address matches the authorized address. 
+        // If the address does not match, an alert message is displayed, and the user is redirected to the homepage. 
+        // If the address matches, the user is redirected to the admin panel page.
+        const authorizedAddress = '0x108E82f3ba7CC22b3903D6F9Bd2234C08f26bF81';
+        const currentAddress = await window.web3.eth.getAccounts();
+        if (currentAddress[0].toLowerCase() !== authorizedAddress.toLowerCase()) {
+          alert('You are not authorized to log in as an admin.');
+          window.location.href = '../../index.html';
+        } else {
+          window.location.href = ' adminPanel.php';
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Admin login form here -->
+    <h1></h1>
+  </body>
+</html>

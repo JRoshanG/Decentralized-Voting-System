@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/admin/admin.css">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+    <script src="../../js/admin/adminAuth.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Menu Bar to move Between Pages -->
+    <ul>
+        <li style="float:left;"><a href="adminPanel.php">Nepal Online DApp Voting System</a></li>
+        <li><a href="../../index.html" style="margin-right: 25px;">Exit</a></li>
+        <li><a href="electionSummary.php">Election Summary</a></li>
+        <li><a href="voterDatabase.html" style="color: antiquewhite;">Voter Database</a></li>
+        <li><a href="voterAuth.php">Voter Authorize</a></li>
+        <li><a href="adminPanel.php">Election </a></li>
+    </ul>
+
+    <!-- Form to add voter to database, it uses the post method to send parameter to addVoter.php file -->
+    <h1 class="title">ADD VOTER TO DATABASE</h1>
+    <div class="container">
+        <form id="form" action="../../php/admin/addVoter.php" method="POST">
+            <div class="row">
+                <div class="col-25">
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="firstName" name="firstName" placeholder="Your first name.." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="middleName">Middle Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="middleName" name="middleName" placeholder="Your middle name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lastName" name="lastName" placeholder="Your last name.." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="voterID">Voter ID Number</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" id="voterID" name="voterID" placeholder="Your Voter ID Number.." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="email" name="email" placeholder="Your Email Address.." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="DOB">Date of Birth</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="DOB" name="DOB" placeholder="YYYY-MM-DD" required>
+                </div>
+
+                <div class="row">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Form to Remove voter to database, it uses the post method to send parameter to removeVoter.php file -->
+
+    <h1 class="title">REMOVE VOTER FROM DATABASE</h1>
+    <div class="container">
+        <form id="form" action="../../php/admin/removeVoter.php" method="POST">
+            <div class="row">
+                <div class="col-25">
+                    <label for="voterID">Voter ID</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" id="voterID" name="voterID" placeholder="Voter ID..." required>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Form to add Election to database, it uses the post method to send parameter to addElection.php file -->
+
+    <h1 class="title">ADD ELECTION TO DATABASE</h1>
+    <div class="container">
+        <form id="form" action="../../php/admin/addElection.php" method="POST">
+            <div class="row">
+                <div class="col-25">
+                    <label for="electionName">Election Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="electionName" name="electionName" placeholder="Election Name.." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="electionAddress">Election Address</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="electionAddress" name="electionAddress" placeholder="Election Address..">
+                </div>
+            </div>
+
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+    </div>
+    </form>
+    </div>
+</body>
+
+</html>

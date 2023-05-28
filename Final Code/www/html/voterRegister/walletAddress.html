@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/voterRegister/voterRegistration.css">
+    <title>Application Form</title>
+</head>
+<!-- It is a form for registering a voter's wallet address in a decentralized voting system. 
+    The form contains one input field for the wallet address, and a submit button. 
+    The form is submitted using the POST method to a PHP script located at "../../php/voterRegister/updateAddress.php". -->
+<body>
+    <h1 class="title">Decentralized Voting System Wallet Address Registration</h1>
+    <div class="container">
+        <form action="../../php/voterRegister/updateAddress.php" method="post">
+            <div class="row">
+                <div class="col-25">
+                    <label for="walletAddress">Wallet Address</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="walletAddress" id="walletAddress" placeholder="Your Voting Wallet Address"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
